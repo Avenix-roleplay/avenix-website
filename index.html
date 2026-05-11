@@ -3,66 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenix RolePlay | Regler & Donationer</title>
+    <title>Avenix RolePlay | Officiel Hjemmeside</title>
     <style>
         :root {
-            --primary-red: #ff3333;
+            --red: #ff0000;
             --dark-red: #8b0000;
-            --bg-dark: #121212;
-            --card-bg: #1e1e1e;
-            --text-gray: #b3b3b3;
-            --white: #ffffff;
+            --bg: #0a0a0a;
+            --card-bg: #141414;
+            --text: #ffffff;
+            --muted: #a0a0a0;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.5;
+        }
+
+        /* Banner & Logo */
+        header {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('logo2.png');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 3px solid var(--red);
+        }
+
+        .main-logo {
+            max-width: 300px;
+            filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Overskrifter */
-        h1 {
-            color: var(--primary-red);
-            font-size: 3rem;
-            text-align: center;
+        h1, h2 {
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 50px;
-            border-bottom: 3px solid var(--primary-red);
-            display: inline-block;
-            width: 100%;
+            color: var(--red);
+            text-align: center;
         }
 
-        h2 {
-            color: var(--primary-red);
-            background: rgba(255, 51, 51, 0.1);
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-top: 40px;
-            text-transform: uppercase;
-        }
-
-        h3 {
-            color: var(--white);
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-
-        /* Donations Sektion */
+        /* Information boks */
         .info-box {
             background: var(--card-bg);
-            border-left: 4px solid var(--primary-red);
-            padding: 25px;
-            margin-bottom: 30px;
+            border-left: 4px solid var(--red);
+            padding: 20px;
+            margin-bottom: 40px;
             border-radius: 4px;
         }
 
+        /* Donations Layout */
         .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--red);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--red);
+            font-size: 1.5rem;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 15px 0;
+            display: block;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        /* Regler Layout */
+        .rules-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .rules-cat {
+            background: #111;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .rules-cat h3 {
+            border-bottom: 2px solid var(--red);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rule {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .rule strong {
+            color: var(--red);
+            display: block;
+        }
+
+        /* Kontakt / MobilePay Sektion */
+        .payment-footer {
+            text-align: center;
+            background: linear-gradient(to right, #111, var(--dark-red), #111);
+            padding: 50px 20px;
+            margin-top: 80px;
+            border-radius: 15px;
+        }
+
+        .mp-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .mp-number {
+            background: white;
+            color: black;
+            padding: 5px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Avenix" class="main-logo">
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h1>Donationer</h1>
+            <div class="info-box">
+                <strong>Information inden køb:</strong><br>
+                Dette er ikke et krav for at Avenix kan forblive åbent. Alle donationer går ubeskåret til serverens drift, husleje og scripts. 
+                <span style="color: var(--red);">Ingen refundering efter køb.</span>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Sølv Pakke</h3>
+                    <span class="price-tag">50 DKK</span>
+                    <ul>
+                        <li>Custom rank på Discord</li>
+                        <li>Privat rum på Discord</li>
+                        <li>Custom nummer</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-color: var(--red);">
+                    <h3>Guld Pakke</h3>
+                    <span class="price-tag">

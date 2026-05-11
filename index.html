@@ -3,174 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenix RolePlay | Officiel Hjemmeside</title>
+    <title>Avenix RolePlay | Regler & Donationer</title>
     <style>
         :root {
-            --primary-red: #cc0000;
+            --primary-red: #ff3333;
             --dark-red: #8b0000;
-            --bg-dark: #0f0f0f;
-            --text-light: #f4f4f4;
-            --card-bg: #1a1a1a;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text-gray: #b3b3b3;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-light);
+            color: var(--white);
             margin: 0;
-            padding: 0;
             line-height: 1.6;
         }
 
-        /* Baggrundslogo (logo2.png) */
-        header {
-            position: relative;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('logo2.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            border-bottom: 4px solid var(--primary-red);
-        }
-
-        header img.main-logo {
-            max-width: 350px;
-            filter: drop-shadow(0 0 20px var(--primary-red));
-        }
-
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        h1, h2, h3 {
+        /* Overskrifter */
+        h1 {
             color: var(--primary-red);
+            font-size: 3rem;
+            text-align: center;
             text-transform: uppercase;
-            border-bottom: 2px solid var(--primary-red);
-            padding-bottom: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            border-bottom: 3px solid var(--primary-red);
+            display: inline-block;
+            width: 100%;
+        }
+
+        h2 {
+            color: var(--primary-red);
+            background: rgba(255, 51, 51, 0.1);
+            padding: 10px 20px;
+            border-radius: 5px;
             margin-top: 40px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            color: var(--white);
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
         }
 
         /* Donations Sektion */
-        .donation-box {
-            background: #111;
+        .info-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary-red);
             padding: 25px;
-            border-left: 5px solid var(--primary-red);
             margin-bottom: 30px;
+            border-radius: 4px;
         }
 
         .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            position: relative;
-        }
-
-        .price {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--primary-red);
-            display: block;
-            margin: 10px 0;
-        }
-
-        /* Regler Design */
-        .rules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-        }
-
-        .rule-group {
-            background: #151515;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        .rule-item {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 5px;
-        }
-
-        .rule-num {
-            color: var(--primary-red);
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .contact-box {
-            text-align: center;
-            padding: 40px;
-            background: var(--dark-red);
-            border-radius: 10px;
-            margin-top: 50px;
-        }
-
-        .mp-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .mp-logo { height: 50px; }
-
-        footer { text-align: center; padding: 40px; color: #555; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <img src="logo.png" alt="Avenix Logo" class="main-logo">
-    </header>
-
-    <div class="container">
-        
-        <section>
-            <h1>Donationer & Støtte</h1>
-            <div class="donation-box">
-                <h3>Information inden køb</h3>
-                <p>Dette er ikke et kald efter penge, eller et must for at Avenix kan forblive åbent. Alle donationer er kærkomment, men har på ingen måde indflydelse på vores fremtid.</p>
-                <p><strong>Hvorfor donere?</strong> Alle penge går ubeskåret til serverens drift, husleje og indkøb af nye scripts. Når man har doneret, er der ingen mulighed for refundering.</p>
-            </div>
-
-            <div class="grid">
-                <div class="card">
-                    <h3>Sølv pakke</h3>
-                    <span class="price">50,-</span>
-                    <ul>
-                        <li>Custom rank på discorden</li>
-                        <li>Privat rum på Discorden</li>
-                        <li>Custom nummer</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Guld pakke</h3>
-                    <span class="price">100,-</span>
-                    <ul>
-                        <li>Custom telefonnummer</li>
-                        <li>Custom nummerplade på 1x køretøj</li>
-                        <li>Prioritetskø</li>
-                        <li>Custom rank på discorden</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Diamant pakke</h3>
-                    <span class="price">200,-</span>
-                    <ul>
-                        <li>Alt fra Guld & Sølv</li>
-                        <li>Custom nummerplade på 2x køretøjer</li>

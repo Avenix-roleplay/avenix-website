@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenix RolePlay | Officiel Hjemmeside</title>
+    <title>Avenix RolePlay</title>
     <style>
         :root {
-            --red: #ff0000;
+            --primary-red: #ff0000;
             --dark-red: #8b0000;
-            --bg: #0a0a0a;
-            --card-bg: #141414;
-            --text: #ffffff;
-            --muted: #a0a0a0;
+            --bg-dark: #0a0a0a;
+            --card-bg: #151515;
+            --text-main: #ffffff;
+            --text-dim: #cccccc;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             margin: 0;
-            line-height: 1.5;
+            padding: 0;
         }
 
-        /* Banner & Logo */
+        /* Banner Sektion */
         header {
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('logo2.png');
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('logo2.png');
             background-size: cover;
             background-position: center;
-            border-bottom: 3px solid var(--red);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 5px solid var(--primary-red);
+            text-align: center;
         }
 
         .main-logo {
             max-width: 300px;
-            filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
+            margin-bottom: 20px;
         }
 
         .container {
@@ -45,117 +47,107 @@
             padding: 40px 20px;
         }
 
+        /* Overskrifter */
         h1, h2 {
+            color: var(--primary-red);
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--red);
             text-align: center;
+            margin-bottom: 30px;
         }
 
-        /* Information boks */
+        /* Donations Boks */
         .info-box {
-            background: var(--card-bg);
-            border-left: 4px solid var(--red);
-            padding: 20px;
+            background: #1a1a1a;
+            border: 2px solid var(--primary-red);
+            padding: 25px;
+            border-radius: 10px;
             margin-bottom: 40px;
-            border-radius: 4px;
         }
 
-        /* Donations Layout */
-        .grid {
+        .donation-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .card {
+        .package {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #222;
-            transition: transform 0.2s, border-color 0.2s;
+            border-top: 4px solid var(--primary-red);
+            padding: 25px;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--red);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--red);
-            font-size: 1.5rem;
+        .package:hover {
+            transform: scale(1.02);
+            background: #202020;
         }
 
         .price-tag {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 15px 0;
-            display: block;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: var(--muted);
-        }
-
-        /* Regler Layout */
-        .rules-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-        }
-
-        .rules-cat {
-            background: #111;
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        .rules-cat h3 {
-            border-bottom: 2px solid var(--red);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .rule {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .rule strong {
-            color: var(--red);
-            display: block;
-        }
-
-        /* Kontakt / MobilePay Sektion */
-        .payment-footer {
-            text-align: center;
-            background: linear-gradient(to right, #111, var(--dark-red), #111);
-            padding: 50px 20px;
-            margin-top: 80px;
-            border-radius: 15px;
-        }
-
-        .mp-text {
-            font-size: 1.8rem;
+            font-size: 28px;
             font-weight: bold;
-            letter-spacing: 1px;
+            color: #fff;
+            display: block;
+            margin: 15px 0;
         }
 
-        .mp-number {
-            background: white;
-            color: black;
-            padding: 5px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-top: 10px;
+        /* Regler Sektion */
+        .rules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .rule-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .rule-card h3 {
+            color: var(--primary-red);
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .rule-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-dim);
+        }
+
+        .rule-text b {
+            color: #fff;
+        }
+
+        /* MobilePay Sektion */
+        .mp-footer {
+            background: var(--dark-red);
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 60px;
+        }
+
+        .mp-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .mp-logo-img {
+            height: 60px;
+            border-radius: 10px;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 30px;
             color: #444;
         }
     </style>
@@ -163,30 +155,114 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Avenix" class="main-logo">
+        <img src="logo.png" alt="Avenix Logo" class="main-logo">
+        <h1>Velkommen til Avenix RolePlay</h1>
     </header>
 
     <div class="container">
         
         <section>
-            <h1>Donationer</h1>
+            <h2>Donationer</h2>
             <div class="info-box">
-                <strong>Information inden køb:</strong><br>
-                Dette er ikke et krav for at Avenix kan forblive åbent. Alle donationer går ubeskåret til serverens drift, husleje og scripts. 
-                <span style="color: var(--red);">Ingen refundering efter køb.</span>
+                <h3>Information inden køb</h3>
+                <p>Dette er ikke et kald efter penge, eller et must for at Avenix kan forblive åbent. Alle penge går til serverens virke, husleje og scripts. <b>INGEN refundering.</b></p>
             </div>
 
-            <div class="grid">
-                <div class="card">
-                    <h3>Sølv Pakke</h3>
-                    <span class="price-tag">50 DKK</span>
+            <div class="donation-grid">
+                <div class="package">
+                    <h3>Sølv pakke</h3>
+                    <span class="price-tag">50,-</span>
                     <ul>
-                        <li>Custom rank på Discord</li>
-                        <li>Privat rum på Discord</li>
+                        <li>Custom rank på discorden</li>
+                        <li>Privat rum på Discorden</li>
                         <li>Custom nummer</li>
                     </ul>
                 </div>
+                <div class="package">
+                    <h3>Guld pakke</h3>
+                    <span class="price-tag">100,-</span>
+                    <ul>
+                        <li>Custom telefonnummer & nummerplade</li>
+                        <li>Prioritetskø</li>
+                        <li>Custom rank på discorden</li>
+                    </ul>
+                </div>
+                <div class="package">
+                    <h3>Diamant pakke</h3>
+                    <span class="price-tag">200,-</span>
+                    <ul>
+                        <li>PED karakter & 3x Valgfrit tøj</li>
+                        <li>1x Køretøj (max 5 mio)</li>
+                        <li>Prioritetskø + Støtter rolle</li>
+                        <li>Alle fordele fra Guld/Sølv</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-                <div class="card" style="border-color: var(--red);">
-                    <h3>Guld Pakke</h3>
-                    <span class="price-tag">
+        <section style="margin-top: 80px;">
+            <h2>Server Regler</h2>
+            <div class="rules-container">
+                
+                <div class="rule-card">
+                    <h3>Generelle Regler</h3>
+                    <div class="rule-text">
+                        <b>1.0 Mobning:</b> 0-tolerance.<br>
+                        <b>1.1 Tredjepart:</b> Mod-menuer/AI filer = Perm ban.<br>
+                        <b>1.2 Bugs:</b> Udnyttelse giver ban.<br>
+                        <b>1.7 Respekt:</b> Manglende respekt giver ban (24t til Perm).<br>
+                        <b>8.1 Safe Zones:</b> Ingen kriminalitet ved Hospital, Politi, Mine.
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>Bande & Krig</h3>
+                    <div class="rule-text">
+                        <b>5.1 Prøveperiode:</b> 7 dage uden krig.<br>
+                        <b>5.8 Marker:</b> Max 1 mark pr. bande.<br>
+                        <b>6.6 Cooldown:</b> Vinder: 4 dage | Taber: 7 dage.<br>
+                        <b>7.2 Strikes:</b> 3 strikes = Lukning af bande.<br>
+                        <b>6.9 Tøj:</b> Krav om tydelig bandemarkering i krig.
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>Firma & Jobs</h3>
+                    <div class="rule-text">
+                        <b>3.1 Firmakasse:</b> Misbrug medfører fjernelse af firma.<br>
+                        <b>3.2 Bonus:</b> Max 12 mio pr. person om ugen.<br>
+                        <b>3.6 Korruption:</b> Fyring og 14 dages cooldown.<br>
+                        <b>3.8 Arbejde:</b> Du skal være på din arbejdsplads.
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>Kriminalitet</h3>
+                    <div class="rule-text">
+                        <b>8.9.2 Antal:</b> Nationalbank: 10 | Banker: 8 | Butik: 5.<br>
+                        <b>8.9.3 Røveri:</b> Aldrig politi/læger.<br>
+                        <b>9.7 Tjek lommer:</b> Kræver gyldig grund.<br>
+                        <b>8.9.1 Scam:</b> Kun Marketplace/Telefon.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="mp-footer">
+            <h2>Støt os her</h2>
+            <div class="mp-content">
+                <img src="mobilepay.png" alt="MP Logo" class="mp-logo-img">
+                <span>TLF: [DIT NUMMER]</span>
+            </div>
+            <p>Husk at skrive dit Discord navn i MobilePay!</p>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Avenix RolePlay - Lavet til fællesskabet
+    </footer>
+
+</body>
+</html>

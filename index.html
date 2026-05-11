@@ -3,76 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVENIX | FiveM Roleplay</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Avenix RolePlay | Officiel Hjemmeside</title>
+    <style>
+        /* Rødt Tema & Design */
+        :root {
+            --primary-red: #cc0000;
+            --dark-red: #8b0000;
+            --bg-dark: #0f0f0f;
+            --text-light: #f4f4f4;
+            --card-bg: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Banner/Baggrundslogo (logo2.png) */
+        header {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('logo2.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        header img.main-logo {
+            max-width: 300px;
+            filter: drop-shadow(0 0 20px var(--primary-red));
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-red);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary-red);
+            padding-bottom: 10px;
+        }
+
+        /* Donations Sektion */
+        .donation-info {
+            background: #222;
+            padding: 20px;
+            border-left: 5px solid var(--primary-red);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Regler Sektion */
+        .rules-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .rule-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid var(--primary-red);
+        }
+
+        .rule-title {
+            font-weight: bold;
+            color: var(--primary-red);
+        }
+
+        /* Kontakt / MobilePay */
+        .contact-box {
+            text-align: center;
+            padding: 40px;
+            background: var(--dark-red);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .mp-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .mp-logo {
+            height: 50px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">AVENIX</div>
-            <ul>
-                <li><a href="#home">Hjem</a></li>
-                <li><a href="#rules">Regler</a></li>
-                <li><a href="#donate">Donation</a></li>
-                <li><a href="https://discord.gg/ZTSrwCKw2" target="_blank" class="discord-nav-btn">JOIN DISCORD</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header id="home" class="hero-section">
-        <div class="overlay"></div>
-        <div class="hero-inner">
-            <img src="logo.png" alt="AVENIX Logo" style="max-width: 200px; margin-bottom: 20px;">
-            <h1>VELKOMMEN TIL <span class="highlight">AVENIX</span></h1>
-            <p>Oplev en verden af seriøs roleplay og uendelige muligheder.</p>
-            <div class="hero-btns">
-                <a href="https://discord.gg/ZTSrwCKw2" target="_blank" class="btn-primary">KOM I GANG</a>
-                <a href="#rules" class="btn-secondary">LÆS REGLER</a>
-            </div>
-        </div>
+    <header>
+        <img src="logo.png" alt="Avenix Logo" class="main-logo">
     </header>
 
-    <section id="rules" class="section">
-        <h2 class="title">Serverens Regelsæt</h2>
-        <div class="rules-container">
-            <div class="rule-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Generelt</h3>
-                <p>Respektér alle spillere og hold en god tone. Enhver form for mobning eller racisme medfører permanent ban.</p>
+    <div class="container">
+        
+        <section id="donations">
+            <h1>Donations Pakker</h1>
+            <div class="donation-info">
+                <strong>Information inden køb:</strong><br>
+                Dette er ikke et kald efter penge. Alle donationer går direkte til serverens virke og scripts. 
+                Der er ingen mulighed for refundering efter køb.
             </div>
-            <div class="rule-card">
-                <i class="fas fa-car"></i>
-                <h3>Kørsel</h3>
-                <p>VDM og urealistisk kørsel er ikke tilladt. Din bil er dit værktøj, pas på den som i virkeligheden.</p>
-            </div>
-            <div class="rule-card">
-                <i class="fas fa-user-secret"></i>
-                <h3>Roleplay</h3>
-                <p>FearRP og sund fornuft skal altid overholdes. Spil for scenariet, ikke for at vinde.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="donate" class="section">
-        <div class="donate-card">
-            <h2>STØT AVENIX</h2>
-            <p>Hjælp os med at holde serveren kørende og få unikke fordele.</p>
-            
-            <div class="mp-box">
-                <i class="fas fa-mobile-alt" style="font-size: 1.8rem; color: #0055ff; margin-right: 15px;"></i>
-                <span>93 87 19 11</span>
+            <div class="grid">
+                <div class="card">
+                    <h3>Sølv Pakke</h3>
+                    <span class="price">50,-</span>
+                    <p>En stærk start i byen!</p>
+                    <ul>
+                        <li>Custom rank på Discord</li>
+                        <li>Privat rum på Discord</li>
+                        <li>Custom nummer</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Guld Pakke</h3>
+                    <span class="price">100,-</span>
+                    <p>Luksus og værdi i balance.</p>
+                    <ul>
+                        <li>Custom telefonnummer & nummerplade (1x)</li>
+                        <li>Prioritetskø</li>
+                        <li>Custom rank på Discord</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Diamant Pakke</h3>
+                    <span class="price">200,-</span>
+                    <p>Den ultimative oplevelse!</p>
+                    <ul>
+                        <li>Prioritetskø & PED karakter</li>
+                        <li>3x Valgfrit tøj</li>
+                        <li>1x Køretøj (max 5 mio)</li>
+                        <li>Alt fra de andre pakker</li>
+                    </ul>
+                </div>
             </div>
+
+            <h3>Enkelte Køb</h3>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="card">Custom PED: 75,-</div>
+                <div class="card">Custom MLO: Kontakt os</div>
+                <div class="card">Custom Nummerplade: 50,-</div>
+                <div class="card">Tøj (5 teksturer): 50,-</div>
+            </div>
+        </section>
+
+        <section id="rules">
+            <h1>Server Regler</h1>
             
-            <p class="small-text">Opret en ticket på Discord efter betaling for at modtage dine fordele.</p>
-            <a href="https://discord.gg/ZTSrwCKw2" target="_blank" class="btn-primary">ÅBN TICKET</a>
+            <div class="rules-section">
+                <h2>Generelle Regler</h2>
+                <div class="rule-item"><span class="rule-title">Aldersgrænse:</span> Du skal være fyldt 16 år.</div>
+                <div class="rule-item"><span class="rule-title">1.0 Mobning:</span> 0-tolerance over for alle former for nedværdigelse.</div>
+                <div class="rule-item"><span class="rule-title">1.1 Tredjepart:</span> Permanent ban for mod-menuer, AI filer, tracers mm.</div>
+                <div class="rule-item"><span class="rule-title">1.2 Bugs:</span> Udnyttelse af bugs medfører permanent udelukkelse.</div>
+                <div class="rule-item"><span class="rule-title">1.9 Sund Fornuft:</span> Tænk realistisk og hold din karakter.</div>
+            </div>
+
+            <div class="rules-section">
+                <h2>Bande Regler</h2>
+                <div class="rule-item"><span class="rule-title">5.1 Prøveperiode:</span> 7 dage uden konflikt/krig.</div>
+                <div class="rule-item"><span class="rule-title">5.8 Marker:</span> En bande må kun eje én mark.</div>
+                <div class="rule-item"><span class="rule-title">6.9 Tøj:</span> Man SKAL bære tydelig bandemarkering under krig.</div>
+            </div>
+
+            <div class="rules-section">
+                <h2>Firma Regler</h2>
+                <div class="rule-item"><span class="rule-title">3.1 Firma kassen:</span> Hævning uden tilladelse = fjernelse af firma.</div>
+                <div class="rule-item"><span class="rule-title">3.6 Korruption:</span> Ikke tilladt. Medfører fyring og 14 dages cooldown.</div>
+            </div>
+        </section>
+
+        <div class="contact-box">
+            <h2>Støt Avenix via MobilePay</h2>
+            <div class="mp-container">
+                <img src="mobilepay.png" alt="MP" class="mp-logo">
+                <span>TLF: [DIT NUMMER HER]</span>
+            </div>
+            <p style="margin-top: 20px;">Husk at skrive dit Discord navn i beskeden!</p>
         </div>
-    </section>
+
+    </div>
 
     <footer>
-        <p>&copy; 2026 AVENIX FiveM. Alle rettigheder forbeholdes.</p>
+        &copy; 2026 Avenix RolePlay - Alle rettigheder forbeholdes.
     </footer>
 
 </body>

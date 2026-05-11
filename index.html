@@ -3,192 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenix RolePlay | Officiel Hjemmeside</title>
+    <title>Avenix RolePlay</title>
     <style>
         :root {
-            --primary-red: #e60000;
-            --bg-black: #050505;
-            --card-bg: #0f0f0f;
-            --text-gray: #bbbbbb;
+            --primary-red: #ff0000;
+            --bg-black: #0a0a0a;
+            --card-bg: #141414;
+            --border-color: #252525;
+            --text-gray: #cecece;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
             background-color: var(--bg-black);
             color: white;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 900px;
-            width: 90%;
-            padding: 40px 0;
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        h1 { font-size: 55px; margin-bottom: 10px; text-align: center; letter-spacing: 3px; }
-        
-        h2 {
-            color: var(--primary-red);
-            text-transform: uppercase;
+        /* Header */
+        header {
             text-align: center;
-            letter-spacing: 2px;
-            font-size: 24px;
-            margin-top: 60px;
-            margin-bottom: 25px;
+            margin-bottom: 80px;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            margin: 10px 0 30px;
         }
 
         .discord-btn {
             background-color: var(--primary-red);
             color: white;
-            padding: 15px 40px;
             text-decoration: none;
+            padding: 18px 45px;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: 0.2s ease;
             display: inline-block;
-            transition: 0.3s;
-            margin-top: 10px;
         }
 
-        .discord-btn:hover { background: white; color: var(--primary-red); }
+        .discord-btn:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+        }
 
         /* Vision */
-        .vision-section {
+        .vision-box {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #1a1a1a;
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 8px;
             text-align: center;
-            line-height: 1.8;
-            color: var(--text-gray);
+            margin-bottom: 80px;
         }
 
-        /* Regler */
-        .rules-grid {
+        h2 {
+            color: var(--primary-red);
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        /* Regler Grid */
+        .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
+            margin-bottom: 80px;
         }
 
         .rule-card {
             background: var(--card-bg);
-            border-radius: 10px;
-            border-top: 2px solid var(--primary-red);
-            padding: 20px;
-            border-left: 1px solid #1a1a1a;
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--primary-red);
+            padding: 30px;
+            border-radius: 4px;
         }
 
-        .rule-card h3 { font-size: 16px; margin-top: 0; color: white; }
-        .rule-card ul { list-style: none; padding: 0; font-size: 14px; color: var(--text-gray); }
-        .rule-card li { margin-bottom: 10px; }
+        .rule-card h3 { margin-top: 0; font-size: 1.4rem; }
+        .rule-card ul { list-style: none; padding: 0; }
+        .rule-card li { margin-bottom: 15px; color: var(--text-gray); }
+        .rule-card b { color: white; display: block; margin-bottom: 2px; }
 
         /* Donationer */
+        .donation-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
         .donation-item {
             background: var(--card-bg);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--primary-red);
+            border: 1px solid var(--border-color);
+            padding: 25px 35px;
+            border-radius: 4px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: 0.2s;
         }
 
-        .donation-info h3 { margin: 0; font-size: 18px; }
-        .donation-info p { margin: 5px 0 0; font-size: 13px; color: var(--text-gray); }
-        .price { font-weight: bold; color: var(--primary-red); font-size: 20px; }
+        .donation-item:hover {
+            border-color: #444;
+        }
 
-        /* MobilePay Boks (INGEN BILLEDER) */
-        .mp-box {
-            background: #850000;
-            padding: 40px;
-            border-radius: 10px;
+        .donation-name h3 { margin: 0; color: var(--primary-red); font-size: 1.3rem; }
+        .donation-name p { margin: 5px 0 0; color: #888; font-size: 0.9rem; }
+        .donation-price { font-size: 1.5rem; font-weight: bold; }
+
+        /* MobilePay */
+        .mp-footer {
+            background: linear-gradient(145deg, #8b0000, #4a0000);
+            padding: 50px;
             text-align: center;
-            margin-top: 50px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            margin-top: 100px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .mp-box h3 { margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; }
-        .mp-number { font-size: 45px; font-weight: 900; margin: 15px 0; display: block; }
-        .mp-box p { margin: 0; font-size: 15px; opacity: 0.9; }
+        .mp-footer h2 { color: white; margin-top: 0; }
+        .mp-number { font-size: 3.5rem; font-weight: 900; display: block; margin: 20px 0; letter-spacing: 2px; }
 
-        footer { padding: 50px; color: #222; font-size: 12px; }
-
-        @media (max-width: 600px) { .rules-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5rem; }
+            .mp-number { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="wrapper">
         
-        <header style="text-align: center;">
-            <h1>AVENIX RP</h1>
-            <a href="https://discord.gg/V8fv6ujhU" class="discord-btn" target="_blank">JOIN DISCORD</a>
+        <header>
+            <h1>Avenix RolePlay</h1>
+            <p>Seriøs RP • Stærkt Fællesskab • Unikke Muligheder</p>
+            <a href="https://discord.gg/V8fv6ujhU" class="discord-btn">Join vores Discord</a>
         </header>
 
-        <h2>VORES VISION</h2>
-        <div class="vision-section">
-            Vores vision er at skabe en platform for seriøs og engageret roleplay. Vi fokuserer på et stærkt fællesskab og en teknisk optimeret server, hvor spillerens historie altid kommer i første række.
+        <h2>Vores Vision</h2>
+        <div class="vision-box">
+            <p style="font-size: 1.1rem; color: var(--text-gray); margin: 0;">
+                Vi stræber efter at skabe en platform, hvor rollespillet er i højsædet. Hos Avenix vægter vi gensidig respekt og kreative historier. Vores mål er at levere en teknisk optimeret oplevelse kombineret med et modent miljø, hvor alle kan føle sig som en del af fortællingen.
+            </p>
         </div>
 
-        <h2>VIGTIGSTE REGLER</h2>
-        <div class="rules-grid">
+        <h2>Vigtigste Regler</h2>
+        <div class="grid">
             <div class="rule-card">
-                <h3>Grundregler</h3>
+                <h3>Generelt</h3>
                 <ul>
-                    <li>• Minimum 16 år.</li>
-                    <li>• Udvis respekt (0-tolerance overfor mobning).</li>
-                    <li>• Ingen brug af tredjepartsprogrammer.</li>
+                    <li><b>Aldersgrænse</b> Du skal være min. 16 år for at spille her.</li>
+                    <li><b>Mobning</b> Vi har 0-tolerance overfor mobning og toxic adfærd.</li>
+                    <li><b>Tredjepart</b> Brug af mod-menuer eller AI-filer giver permanent ban.</li>
                 </ul>
             </div>
             <div class="rule-card">
-                <h3>RP Regler</h3>
+                <h3>RP & Adfærd</h3>
                 <ul>
-                    <li>• Overhold FearRP i alle situationer.</li>
-                    <li>• Ingen kriminalitet i Safezones.</li>
-                    <li>• Selvmords-RP er strengt forbudt.</li>
+                    <li><b>Safezones</b> Ingen kriminalitet ved Hospital, Politi og Minen.</li>
+                    <li><b>Røveri</b> Man må aldrig røve politi eller læger under arbejde.</li>
+                    <li><b>Selvmords-RP</b> Er strengt forbudt og medfører øjeblikkeligt CK.</li>
                 </ul>
             </div>
         </div>
 
-        <h2>DONATIONER</h2>
-        
-        <div class="donation-item">
-            <div class="donation-info">
-                <h3>Sølv Pakke</h3>
-                <p>Custom rank, privat rum & custom nummer</p>
+        <h2>Donationer & Fordele</h2>
+        <div class="donation-list">
+            <div class="donation-item">
+                <div class="donation-name">
+                    <h3>Sølv Pakke</h3>
+                    <p>Custom rank, privat rum & unikt nummer</p>
+                </div>
+                <div class="donation-price">50,-</div>
             </div>
-            <div class="price">50,-</div>
+            <div class="donation-item">
+                <div class="donation-name">
+                    <h3>Guld Pakke</h3>
+                    <p>Prioritetskø, custom nummerplade & Guld rolle</p>
+                </div>
+                <div class="donation-price">100,-</div>
+            </div>
+            <div class="donation-item">
+                <div class="donation-name">
+                    <h3>Diamant Pakke</h3>
+                    <p>PED karakter, 1x Valgfrit køretøj & Fast prioritetskø</p>
+                </div>
+                <div class="donation-price">200,-</div>
+            </div>
         </div>
 
-        <div class="donation-item">
-            <div class="donation-info">
-                <h3>Guld Pakke</h3>
-                <p>Prioritetskø, custom nummerplade & Guld rolle</p>
-            </div>
-            <div class="price">100,-</div>
-        </div>
-
-        <div class="donation-item">
-            <div class="donation-info">
-                <h3>Diamant Pakke</h3>
-                <p>PED, 1x Valgfrit køretøj & Fast prioritetskø</p>
-            </div>
-            <div class="price">200,-</div>
-        </div>
-
-        <div class="mp-box">
-            <h3>Støt via MobilePay</h3>
+        <div class="mp-footer">
+            <h2>Støt via MobilePay</h2>
             <span class="mp-number">93 87 19 11</span>
-            <p>Husk at skrive dit Discord-navn i beskeden</p>
+            <p style="font-size: 1.1rem; opacity: 0.8;">Husk at skrive dit Discord-navn i beskeden!</p>
         </div>
 
     </div>
 
-    <footer>© 2026 Avenix RolePlay - Alle rettigheder forbeholdes</footer>
+    <footer style="text-align: center; padding: 60px; color: #333; font-size: 0.8rem;">
+        &copy; 2026 Avenix RolePlay - Alle rettigheder forbeholdes.
+    </footer>
 
 </body>
 </html>

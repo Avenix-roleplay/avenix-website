@@ -23,24 +23,25 @@
             line-height: 1.6;
         }
 
-        /* Rettet Header-sektion */
+        /* Header med logo2.png som baggrund */
         header {
-            min-height: 500px;
-            background-color: #000; /* Sort baggrund så logoet popper */
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('logo2.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Giver en fed effekt når man scroller */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             border-bottom: 4px solid var(--primary-red);
             text-align: center;
-            padding: 40px 20px;
         }
 
         .header-logo {
-            max-width: 350px; /* Gjort logoet større og tydeligt */
-            height: auto;
+            max-width: 250px;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 20px rgba(230, 0, 0, 0.5));
+            filter: drop-shadow(0 0 15px var(--primary-red));
         }
 
         .discord-btn {
@@ -53,7 +54,7 @@
             text-transform: uppercase;
             transition: 0.3s;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .discord-btn:hover {
@@ -75,7 +76,6 @@
             padding-bottom: 10px;
         }
 
-        /* Donations Layout */
         .donation-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -90,7 +90,6 @@
             border-left: 4px solid var(--primary-red);
         }
 
-        /* Regler Layout */
         .rules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -106,7 +105,6 @@
         .rule-entry { margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 10px; }
         .rule-entry b { color: var(--primary-red); display: block; }
 
-        /* MobilePay Sektion uden billed-afhængighed */
         .mp-footer {
             background: var(--dark-red);
             padding: 40px;
@@ -121,8 +119,8 @@
 <body>
 
     <header>
-        <img src="logo2.png" alt="Avenix Logo" class="header-logo">
-        <h1 style="border:none; margin:0;">Velkommen til Avenix RolePlay</h1>
+        <img src="logo.png" alt="" class="header-logo" onerror="this.style.display='none'">
+        <h1>Velkommen til Avenix RolePlay</h1>
         <a href="https://discord.gg/V8fv6ujhU" class="discord-btn" target="_blank">Join vores Discord</a>
     </header>
 
@@ -130,7 +128,6 @@
         
         <section>
             <h2>Donationer & Fordele</h2>
-            <p><i>Alle donationer går ubeskåret til serverens drift. Ingen refundering.</i></p>
             <div class="donation-grid">
                 <div class="card">
                     <h3>Sølv Pakke - 50,-</h3>
@@ -143,48 +140,37 @@
                 <div class="card">
                     <h3>Guld Pakke - 100,-</h3>
                     <ul>
-                        <li>Custom telefonnummer & Nummerplade (1x)</li>
                         <li>Prioritetskø</li>
+                        <li>Custom nummerplade (1x)</li>
                         <li>Custom rank på Discord</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Diamant Pakke - 200,-</h3>
                     <ul>
-                        <li>PED karakter & 3x Valgfrit tøj</li>
+                        <li>PED karakter & 3x Tøj</li>
                         <li>1x Køretøj (max 5 mio)</li>
-                        <li>Prioritetskø + Støtter rolle</li>
-                        <li>Custom nummerplade (2x)</li>
+                        <li>Permanent prioritetskø</li>
                     </ul>
                 </div>
-            </div>
-            <h3>Enkelte Donations</h3>
-            <div class="donation-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                <div class="card">Custom PED: 75,-</div>
-                <div class="card">Tøj (5 teks): 50,-</div>
-                <div class="card">MLO: Kontakt os</div>
-                <div class="card">Nummerplade: 50,-</div>
             </div>
         </section>
 
         <section>
-            <h2>Server Regelsæt</h2>
+            <h2>Vigtigste Regler</h2>
             <div class="rules-grid">
-                
                 <div class="rule-box">
-                    <h3>Generelle Regler</h3>
-                    <div class="rule-entry"><b>Aldersgrænse:</b> Du skal være fyldt 16 år.</div>
-                    <div class="rule-entry"><b>1.0 Mobning:</b> 0-tolerance. Mobning i RP tolereres heller ikke.</div>
-                    <div class="rule-entry"><b>1.1 Tredjepart:</b> AI filer, mod-menuer, tracers mm. = Permanent ban.</div>
+                    <h3>Grundregler</h3>
+                    <div class="rule-entry"><b>Aldersgrænse:</b> Du skal være min. 16 år.</div>
+                    <div class="rule-entry"><b>Respekt:</b> 0-tolerance overfor mobning og toxic adfærd.</div>
+                    <div class="rule-entry"><b>Tredjepart:</b> Mod-menuer mm. giver permanent ban.</div>
                 </div>
-
                 <div class="rule-box">
-                    <h3>Kriminalitet & Heists</h3>
-                    <div class="rule-entry"><b>8.9.3 Røveri:</b> Politiet og læger må ikke røves.</div>
-                    <div class="rule-entry"><b>9.3 SelvmordsRP:</b> Giver automatisk CK.</div>
-                    <div class="rule-entry"><b>8.1 Safe Zones:</b> Hospital, politi, firmaer, minen og garage.</div>
+                    <h3>Adfærd</h3>
+                    <div class="rule-entry"><b>Safe Zones:</b> Hospital, Politi, og Minen er sikre zoner.</div>
+                    <div class="rule-entry"><b>Røveri:</b> Ingen røveri af Politi eller Læger under arbejde.</div>
+                    <div class="rule-entry"><b>SelvmordsRP:</b> Strengt forbudt og medfører CK.</div>
                 </div>
-
             </div>
         </section>
 

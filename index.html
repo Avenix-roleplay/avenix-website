@@ -23,7 +23,6 @@
             line-height: 1.6;
         }
 
-        /* Banner sektion med logo2.png */
         header {
             position: relative;
             height: 550px;
@@ -132,20 +131,21 @@
         .card h3 { color: var(--primary-red); margin-top: 0; }
         .price { font-size: 24px; font-weight: bold; margin-bottom: 15px; display: block; }
 
-        /* MobilePay Boks */
-        .mp-footer {
+        /* MobilePay Boks - Nu placeret under donationer */
+        .mp-box {
             background: linear-gradient(145deg, #8b0000, #4a0000);
-            padding: 60px;
+            padding: 50px;
             text-align: center;
             border-radius: 15px;
-            margin-top: 80px;
+            margin: 40px 0 80px 0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid var(--primary-red);
         }
 
-        .mp-footer h2 { color: white; border: none; margin: 0; }
-        .mp-number { font-size: 50px; font-weight: 900; display: block; margin: 20px 0; }
+        .mp-box h2 { color: white; border: none; margin: 0; font-size: 1.8rem; }
+        .mp-number { font-size: 55px; font-weight: 900; display: block; margin: 15px 0; letter-spacing: 2px; }
 
-        footer { text-align: center; padding: 60px; color: #333; font-size: 0.9rem; }
+        footer { text-align: center; padding: 60px; color: #555; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
@@ -167,7 +167,7 @@
             <h2>Vores Vision</h2>
             <div class="vision-box">
                 <p style="font-size: 1.2rem; margin: 0; color: var(--text-gray);">
-                    Hos <b>Avenix RolePlay</b> skaber vi rammerne for seriøs RP og et stærkt fællesskab. Vores vision er at levere en teknisk optimeret server, hvor spillerens historie og unikke karakterer altid er i centrum. Vi vægter gensidig respekt og kvalitet i alle RP-scenarier.
+                    Hos <b>Avenix RolePlay</b> skaber vi rammerne for seriøs RP og et stærkt fællesskab. Vores vision er at levere en teknisk optimeret server, hvor spillerens historie og unikke karakterer altid er i centrum.
                 </p>
             </div>
         </section>
@@ -180,15 +180,15 @@
                     <ul>
                         <li><b>1.0</b> Minimumsalder er 16 år.</li>
                         <li><b>1.1</b> 0-tolerance overfor mobning og toxic adfærd.</li>
-                        <li><b>1.2</b> Tredjepartsprogrammer (mod-menuer mm.) = Permanent ban.</li>
+                        <li><b>1.2</b> Tredjepartsprogrammer = Permanent ban.</li>
                     </ul>
                 </div>
                 <div class="rule-card">
                     <h3>RP & Adfærd</h3>
                     <ul>
-                        <li><b>2.1</b> Overhold altid FearRP i truende situationer.</li>
-                        <li><b>2.2</b> Ingen kriminalitet i Safezones (Hospital, Politi, Minen).</li>
-                        <li><b>2.3</b> Selvmords-RP er strengt forbudt og medfører CK.</li>
+                        <li><b>2.1</b> Overhold altid FearRP.</li>
+                        <li><b>2.2</b> Ingen kriminalitet i Safezones.</li>
+                        <li><b>2.3</b> Selvmords-RP er strengt forbudt.</li>
                     </ul>
                 </div>
             </div>
@@ -225,20 +225,20 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="mp-box">
+                <h2>STØT VIA MOBILEPAY</h2>
+                <span class="mp-number">93 87 19 11</span>
+                <p style="font-size: 1.2rem; margin: 0; font-weight: bold;">Husk dit Discord-navn i beskeden!</p>
+            </div>
             
-            <h3 style="text-align: center; color: var(--primary-red); margin-top: 40px;">Enkelte Donations</h3>
+            <h3 style="text-align: center; color: var(--primary-red); margin-top: 40px;">Enkelte Donationer</h3>
             <div class="donation-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div class="card" style="text-align: center;">Custom PED: <b>75,-</b></div>
                 <div class="card" style="text-align: center;">Tøj (5 teks): <b>50,-</b></div>
                 <div class="card" style="text-align: center;">Nummerplade: <b>50,-</b></div>
             </div>
         </section>
-
-        <div class="mp-footer">
-            <h2>STØT VIA MOBILEPAY</h2>
-            <span class="mp-number">93 87 19 11</span>
-            <p style="font-size: 1.1rem; opacity: 0.9;">Husk at skrive dit Discord-navn i overførslen!</p>
-        </div>
 
     </div>
 

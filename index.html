@@ -3,42 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenix RolePlay</title>
+    <title>Avenix RolePlay | Officiel Hjemmeside</title>
     <style>
         :root {
-            --primary-red: #ff0000;
-            --dark-red: #8b0000;
-            --bg-dark: #0a0a0a;
-            --card-bg: #151515;
-            --text-main: #ffffff;
-            --text-dim: #cccccc;
+            --primary-red: #e60000;
+            --dark-red: #990000;
+            --bg-dark: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --text-white: #ffffff;
+            --text-gray: #bbbbbb;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-main);
+            color: var(--text-white);
             margin: 0;
             padding: 0;
+            line-height: 1.5;
         }
 
-        /* Banner Sektion */
+        /* Banner med logo2.png som baggrund */
         header {
-            height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('logo2.png');
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('logo2.png');
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-bottom: 5px solid var(--primary-red);
-            text-align: center;
+            border-bottom: 4px solid var(--primary-red);
         }
 
-        .main-logo {
-            max-width: 300px;
-            margin-bottom: 20px;
+        .header-logo {
+            max-width: 280px;
+            filter: drop-shadow(0 0 15px rgba(230, 0, 0, 0.5));
         }
 
         .container {
@@ -47,22 +47,24 @@
             padding: 40px 20px;
         }
 
-        /* Overskrifter */
-        h1, h2 {
+        h1, h2, h3 {
             color: var(--primary-red);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
-        /* Donations Boks */
+        .section-divider {
+            border-bottom: 2px solid #333;
+            margin: 40px 0;
+        }
+
+        /* Donations Layout */
         .info-box {
-            background: #1a1a1a;
-            border: 2px solid var(--primary-red);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 40px;
+            background: rgba(230, 0, 0, 0.1);
+            border: 1px solid var(--primary-red);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
         }
 
         .donation-grid {
@@ -71,197 +73,186 @@
             gap: 20px;
         }
 
-        .package {
+        .donation-card {
             background: var(--card-bg);
-            border-top: 4px solid var(--primary-red);
             padding: 25px;
-            border-radius: 5px;
-            transition: 0.3s;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: 0.3s ease;
         }
 
-        .package:hover {
-            transform: scale(1.02);
-            background: #202020;
+        .donation-card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
         }
 
-        .price-tag {
-            font-size: 28px;
+        .price {
+            font-size: 26px;
             font-weight: bold;
             color: #fff;
             display: block;
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
-        /* Regler Sektion */
-        .rules-container {
+        /* Regler Layout */
+        .rules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 25px;
         }
 
-        .rule-card {
-            background: #1a1a1a;
+        .rule-category {
+            background: #111;
             padding: 20px;
-            border-left: 4px solid var(--primary-red);
+            border-radius: 8px;
+            border-top: 3px solid var(--primary-red);
         }
 
-        .rule-card h3 {
-            color: var(--primary-red);
-            margin-top: 0;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-
-        .rule-text {
+        .rule-item {
+            margin-bottom: 12px;
             font-size: 14px;
-            line-height: 1.8;
-            color: var(--text-dim);
         }
 
-        .rule-text b {
-            color: #fff;
+        .rule-item b {
+            color: var(--primary-red);
+            display: block;
+            margin-bottom: 2px;
         }
 
-        /* MobilePay Sektion */
-        .mp-footer {
+        /* MobilePay */
+        .mp-section {
             background: var(--dark-red);
             padding: 40px;
             text-align: center;
-            border-radius: 15px;
-            margin-top: 60px;
+            border-radius: 12px;
+            margin-top: 50px;
         }
 
-        .mp-content {
+        .mp-flex {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 20px;
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 30px;
+            font-weight: 800;
         }
 
-        .mp-logo-img {
-            height: 60px;
-            border-radius: 10px;
-        }
+        .mp-logo { height: 55px; border-radius: 8px; }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #444;
-        }
+        footer { text-align: center; padding: 50px; color: #555; font-size: 12px; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo.png" alt="Avenix Logo" class="main-logo">
-        <h1>Velkommen til Avenix RolePlay</h1>
+        <img src="logo.png" alt="Avenix Logo" class="header-logo">
     </header>
 
     <div class="container">
         
         <section>
-            <h2>Donationer</h2>
+            <h1>Donationer & Pakker</h1>
             <div class="info-box">
-                <h3>Information inden køb</h3>
-                <p>Dette er ikke et kald efter penge, eller et must for at Avenix kan forblive åbent. Alle penge går til serverens virke, husleje og scripts. <b>INGEN refundering.</b></p>
+                <strong>Information inden køb:</strong>
+                <p>Dette er ikke et kald efter penge, eller et must for at Avenix kan forblive åbent. Alle donationer går til serverens virke og scripts. Ved køb accepteres det, at der er INGEN mulighed for refundering.</p>
             </div>
 
             <div class="donation-grid">
-                <div class="package">
-                    <h3>Sølv pakke</h3>
-                    <span class="price-tag">50,-</span>
+                <div class="donation-card">
+                    <h3>Sølv Pakke</h3>
+                    <span class="price">50,-</span>
                     <ul>
-                        <li>Custom rank på discorden</li>
-                        <li>Privat rum på Discorden</li>
+                        <li>Custom rank på Discord</li>
+                        <li>Privat rum på Discord</li>
                         <li>Custom nummer</li>
                     </ul>
                 </div>
-                <div class="package">
-                    <h3>Guld pakke</h3>
-                    <span class="price-tag">100,-</span>
+                <div class="donation-card">
+                    <h3>Guld Pakke</h3>
+                    <span class="price">100,-</span>
                     <ul>
-                        <li>Custom telefonnummer & nummerplade</li>
+                        <li>Custom telefonnummer & nummerplade (1 bil)</li>
                         <li>Prioritetskø</li>
                         <li>Custom rank på discorden</li>
                     </ul>
                 </div>
-                <div class="package">
-                    <h3>Diamant pakke</h3>
-                    <span class="price-tag">200,-</span>
+                <div class="donation-card">
+                    <h3>Diamant Pakke</h3>
+                    <span class="price">200,-</span>
                     <ul>
                         <li>PED karakter & 3x Valgfrit tøj</li>
-                        <li>1x Køretøj (max 5 mio)</li>
-                        <li>Prioritetskø + Støtter rolle</li>
-                        <li>Alle fordele fra Guld/Sølv</li>
+                        <li>1x Køretøj (Max 5 mio værdi)</li>
+                        <li>Prioritetskø + Privatrum</li>
+                        <li>Custom nummerplade (2 biler)</li>
                     </ul>
                 </div>
             </div>
+
+            <h3 style="margin-top:30px;">Enkelte Køb</h3>
+            <div class="donation-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                <div class="donation-card">Custom Ped: 75,-</div>
+                <div class="donation-card">Tøj (5 teks): 50,-</div>
+                <div class="donation-card">MLO: Kontakt os</div>
+                <div class="donation-card">Nummerplade: 50,-</div>
+            </div>
         </section>
 
-        <section style="margin-top: 80px;">
-            <h2>Server Regler</h2>
-            <div class="rules-container">
+        <div class="section-divider"></div>
+
+        <section>
+            <h1>Server Regelsæt</h1>
+            <div class="rules-grid">
                 
-                <div class="rule-card">
-                    <h3>Generelle Regler</h3>
-                    <div class="rule-text">
-                        <b>1.0 Mobning:</b> 0-tolerance.<br>
-                        <b>1.1 Tredjepart:</b> Mod-menuer/AI filer = Perm ban.<br>
-                        <b>1.2 Bugs:</b> Udnyttelse giver ban.<br>
-                        <b>1.7 Respekt:</b> Manglende respekt giver ban (24t til Perm).<br>
-                        <b>8.1 Safe Zones:</b> Ingen kriminalitet ved Hospital, Politi, Mine.
-                    </div>
+                <div class="rule-category">
+                    <h3>Generelt</h3>
+                    <div class="rule-item"><b>1.0 Mobning:</b> 0-tolerance over for nedværdigelse.</div>
+                    <div class="rule-item"><b>1.1 Tredjepart:</b> AI filer, mod-menuer, tracers mm. = Perm ban.</div>
+                    <div class="rule-item"><b>1.4 AFK:</b> Kun tilladt i minen. På marken er det på eget ansvar.</div>
+                    <div class="rule-item"><b>1.7 Respekt:</b> 24t ban -> 7 dage -> Permanent.</div>
+                    <div class="rule-item"><b>8.7 Under 16:</b> Får dobbelt straf på advarsler.</div>
                 </div>
 
-                <div class="rule-card">
-                    <h3>Bande & Krig</h3>
-                    <div class="rule-text">
-                        <b>5.1 Prøveperiode:</b> 7 dage uden krig.<br>
-                        <b>5.8 Marker:</b> Max 1 mark pr. bande.<br>
-                        <b>6.6 Cooldown:</b> Vinder: 4 dage | Taber: 7 dage.<br>
-                        <b>7.2 Strikes:</b> 3 strikes = Lukning af bande.<br>
-                        <b>6.9 Tøj:</b> Krav om tydelig bandemarkering i krig.
-                    </div>
+                <div class="rule-category">
+                    <h3>Bande & Konflikt</h3>
+                    <div class="rule-item"><b>5.1 Prøveperiode:</b> 7 dage. Ingen krig eller konflikt her.</div>
+                    <div class="rule-item"><b>5.7 Salg i zoner:</b> Hverdage: 15-23 | Weekend: 12-02.</div>
+                    <div class="rule-item"><b>5.8 Marker:</b> Max 1 mark pr. bande.</div>
+                    <div class="rule-item"><b>6.6 Cooldown:</b> Vinder: 4 dage | Taber: 7 dage + FearRP.</div>
+                    <div class="rule-item"><b>7.2 Strike System:</b> 3 strikes = lukning. Udløber efter 1 måned.</div>
                 </div>
 
-                <div class="rule-card">
-                    <h3>Firma & Jobs</h3>
-                    <div class="rule-text">
-                        <b>3.1 Firmakasse:</b> Misbrug medfører fjernelse af firma.<br>
-                        <b>3.2 Bonus:</b> Max 12 mio pr. person om ugen.<br>
-                        <b>3.6 Korruption:</b> Fyring og 14 dages cooldown.<br>
-                        <b>3.8 Arbejde:</b> Du skal være på din arbejdsplads.
-                    </div>
+                <div class="rule-category">
+                    <h3>Firma Regler</h3>
+                    <div class="rule-item"><b>3.1 Firmakassen:</b> Hævning uden tilladelse = fjernelse af firma.</div>
+                    <div class="rule-item"><b>3.2 Bonus:</b> Max 12 mio pr. person (max 30%). 1 gang ugentligt.</div>
+                    <div class="rule-item"><b>3.6 Korruption:</b> Ikke tilladt. Udløser fyring og 14 dages cooldown.</div>
+                    <div class="rule-item"><b>3.8 På arbejde:</b> Du skal befinde dig på din arbejdsplads.</div>
                 </div>
 
-                <div class="rule-card">
-                    <h3>Kriminalitet</h3>
-                    <div class="rule-text">
-                        <b>8.9.2 Antal:</b> Nationalbank: 10 | Banker: 8 | Butik: 5.<br>
-                        <b>8.9.3 Røveri:</b> Aldrig politi/læger.<br>
-                        <b>9.7 Tjek lommer:</b> Kræver gyldig grund.<br>
-                        <b>8.9.1 Scam:</b> Kun Marketplace/Telefon.
-                    </div>
+                <div class="rule-category">
+                    <h3>Specielle Regler</h3>
+                    <div class="rule-item"><b>8.1 Safe Zones:</b> Hospital, politi, firmaer, mine, garage.</div>
+                    <div class="rule-item"><b>8.9.2 Heist Antal:</b> Nationalbank: 10 | Banker: 8 | Butik: 5.</div>
+                    <div class="rule-item"><b>9.3 SelvmordsRP:</b> Giver automatisk CK.</div>
+                    <div class="rule-item"><b>9.7 Tjek lommer:</b> Kræver gyldig grund. Misbrug = 2 dages ban.</div>
                 </div>
 
             </div>
         </section>
 
-        <div class="mp-footer">
-            <h2>Støt os her</h2>
-            <div class="mp-content">
-                <img src="mobilepay.png" alt="MP Logo" class="mp-logo-img">
-                <span>TLF: [DIT NUMMER]</span>
+        <div class="mp-section">
+            <h2>Støt Avenix via MobilePay</h2>
+            <div class="mp-flex">
+                <img src="mobilepay.png" alt="MP" class="mp-logo">
+                <span>TLF: [DIT NUMMER HER]</span>
             </div>
-            <p>Husk at skrive dit Discord navn i MobilePay!</p>
+            <p style="margin-top:15px;">Husk at skrive dit Discord-navn i overførslen!</p>
         </div>
 
     </div>
 
     <footer>
-        &copy; 2026 Avenix RolePlay - Lavet til fællesskabet
+        &copy; 2026 Avenix RolePlay - Alle regler og priser er vejledende.
     </footer>
 
 </body>
